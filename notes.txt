@@ -1,0 +1,93 @@
+// WSL installed (Linux environment)
+// The files are now stored in Windows here: \\wsl$\Ubuntu\home\chieftec 
+
+// VSCode: Ctrl + Shift + P
+// VSCode Command Palette: WSL: New WSL window
+
+// If "VS Code Server for WSL closed unexpectedly"
+// Open Powershell (not as admin)
+// wsl --shutdown
+// wsl
+
+
+chieftec@Chieftec-PC:~$ 
+cd hh-fcc
+mkdir html-fund-me-fcc
+cd html-fund-me-fcc
+code .
+    New Visual Studio Code started
+    VScode: View Teminal
+
+Live server: http://127.0.0.1:5500/intex.html
+
+// Create file .prettierrc
+// {
+//    "tabWidth": 4,
+//    "useTabs": false,
+//    "semi": false,
+//    "singleQuote": false
+// }
+
+yarn add --dev prettier
+
+// Alternative ETHERS for front-end development:
+// https://docs.ethers.io/v5/getting-started/#getting-started--importing--web-browser
+// Copy all codes in: https://cdn.ethers.io/lib/ethers-5.6.esm.min.js
+// Create file ethers-5.6.esm.min.js and past in all codes
+// Save (Ctrl + S) for autoformat with prettier (24503 lines of codes)
+// In index.js: import { ethers } from "./ethers-5.6.esm.min.js"
+
+// Web3Provider (similar to JsonRpcProvider, both Ethers) documentation:
+// https://docs.ethers.io/v5/api/providers/other/#Web3Provider
+
+
+// Create file constants.js
+// Open back-end project ~/hh-fcc/hardhat-fund-me-fcc$ 
+// Find "abi":{} in artifacts/contracts/FundMe.sol/FundMe.json
+// Paste codes in a new constant abi
+// In index.js: import { abi } from "./constants.js"
+
+
+// New Terminal in VScode
+// Start back-end project (in same VScode) from ~/hh-fcc/hardhat-fund-me-fcc$
+yarn hardhat node
+
+// If ERROR: Reset Metamask Account:
+// On Extension, click the account icon on the top-right corner. On Mobile, tap the hamburger icon in the top left to open the main menu.
+// Select Settings > Advanced > Scroll down and click Reset Account.
+
+// Terminal NODE for getting adresses etc
+// Terminal BASH for continuing working with front-end project
+
+// Find in terminal NODE the contract address: deployed at [the address]
+// Paste the address as export const contractAddress in file constants.js
+
+// New RPC URL in Metamask for new network
+// JSON-RPC server at http://127.0.0.1:8545/ 
+// Account #0: 0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266 (10000 ETH)
+// Private Key: 0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80
+// Import Private Key to a new account in Metamask (Account 3)
+
+// Ethers contract: Events provider.once
+// https://docs.ethers.io/v5/api/contract/contract/#Contract-once
+
+// ethers.utils.formatEther( value ) ⇒ string
+// https://docs.ethers.io/v5/api/utils/display-logic/#utils-formatEther
+
+
+// Added .gitignore and .prettierignore
+
+// README file template - https://github.com/othneildrew/Best-README-Template
+
+
+// github - repository created: https://github.com/engan/html-fund-me-fcc
+git init
+git add .
+git config --global user.email "you@example.com"
+git config --global user.name "Your Name"
+git commit -m "initial commit"
+git remote add origin https://github.com/engan/html-fund-me-fcc.git
+git remote -v
+    origin  https://github.com/engan/html-fund-me-fcc.git (fetch)
+    origin  https://github.com/engan/html-fund-me-fcc.git (push)
+git push -u origin main
